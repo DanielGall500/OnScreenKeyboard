@@ -11,6 +11,9 @@ public:
     explicit ScreenKey(const QString &letter , QWidget *parent = 0);
     ~ScreenKey();
 
+    QString getLetter() { return *pKeyLetter;   }
+    void    setLetter(const QString &letter) { pKeyLetter = &letter; }
+
 private:
     QPushButton *pKeyButton;
     const QString *pKeyLetter;
