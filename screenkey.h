@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QPushButton>
+#include <QTimer>
+#include <QDebug>
 
 class ScreenKey : public QWidget
 {
@@ -18,9 +20,13 @@ private:
     QPushButton *pKeyButton;
     const QString *pKeyLetter;
 
+    QTimer *timer;
+
 signals:
 
 public slots:
+    void keyPressed();
+
 };
 
 #endif // SCREENKEY_H

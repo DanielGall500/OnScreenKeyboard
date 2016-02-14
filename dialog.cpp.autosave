@@ -27,7 +27,6 @@ Dialog::Dialog(QWidget *parent) :
     ScreenKey *screenKey = new ScreenKey("Q",this);
     screenKey->show();
 
-    connect(screenKey, SIGNAL(clicked()), this, SLOT(ScreenKey::keyPressed()));
 }
 
 Dialog::~Dialog()

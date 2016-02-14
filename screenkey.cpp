@@ -6,18 +6,19 @@ ScreenKey::ScreenKey(const QString &letter, QWidget *parent) : QWidget(parent)
     pKeyButton = new QPushButton(letter, parent);
 
     pKeyButton->setStyleSheet(QString::fromUtf8(
-                                                "background-color: rgb(100, 100, 100);"
-                                                "border-width: 2px;"
-                                                "border-color: red;"
-                                                "font: bold 14px;"
-                                                "min-width: 10em;"
+                                                "background-color: rgb(52,61,66);" //should be matdesign -= 5 which is 52,61,66
+                                                "color: white;"
+                                                "font: 20px;"
                                                 "padding: 6px;"
                                                 "border: none;"
                                                 ));
 
+    connect(pKeyButton, SIGNAL(clicked()), parent, SLOT(keyPressed()));
 }
 
-ScreenKey::~ScreenKey()
+ScreenKey::~ScreenKey(){}
+
+void ScreenKey::keyPressed()
 {
 
 }
