@@ -13,8 +13,10 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        dialog.cpp
+        dialog.cpp \
+    screenkey.cpp
 
-HEADERS  += dialog.h
+HEADERS  += dialog.h \
+    screenkey.h
 
 FORMS    += dialog.ui

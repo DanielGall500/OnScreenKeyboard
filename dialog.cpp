@@ -2,6 +2,7 @@
 #include "ui_dialog.h"
 #include <QDesktopWidget>
 #include <QPushButton>
+#include <screenkey.h>
 
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
@@ -14,6 +15,9 @@ Dialog::Dialog(QWidget *parent) :
 
     this->setFixedSize(rec.width() * 0.7, rec.height() * 0.4);
     this->move((rec.width() - this->width()) / 2 , (rec.height() - this->height()) * 0.9);
+
+    ScreenKey *screenKey = new ScreenKey("Q", this);
+    screenKey->show();
 }
 
 Dialog::~Dialog()
