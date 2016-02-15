@@ -20,3 +20,5 @@ HEADERS  += dialog.h \
     screenkey.h
 
 FORMS    += dialog.ui
+
+DISTFILES +=

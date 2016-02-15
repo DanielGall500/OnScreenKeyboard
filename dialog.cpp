@@ -11,7 +11,11 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
-    QWidget::setWindowFlags(Qt::CustomizeWindowHint | Qt::FramelessWindowHint);
+    this->setAttribute(Qt::WA_ShowWithoutActivating);
+    this->setParent(0);
+    this->setWindowFlags( Qt::CustomizeWindowHint //| Qt::Tool
+                        | Qt::WindowStaysOnTopHint| Qt::WindowDoesNotAcceptFocus
+                        | Qt::FramelessWindowHint);
 
     QPalette pal = this->palette();
     QColor materialDesRGB(52,61,66,255); // originals: 57,66,71,255 -= 5 to make darker
@@ -27,11 +31,14 @@ Dialog::Dialog(QWidget *parent) :
     ScreenKey *screenKey = new ScreenKey("Q",this);
     screenKey->show();
 
-    connect(screenKey, SIGNAL(clicked()), this, SLOT(ScreenKey::keyPressed()));
+
+
 }
 
 Dialog::~Dialog()
 {
     delete ui;
 }
+
+
 

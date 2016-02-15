@@ -5,6 +5,14 @@
 #include <QPushButton>
 #include <QTimer>
 #include <QDebug>
+#include <QMessageBox>
+#include <QStyle>
+#include <QEvent>
+#include <QKeyEvent>
+#include <w32api.h>
+#include <windows.h>
+#include <winuser.h>
+#include <QMouseEvent>
 
 class ScreenKey : public QWidget
 {
@@ -19,6 +27,10 @@ public:
 private:
     QPushButton *pKeyButton;
     const QString *pKeyLetter;
+
+    HWND windowHandle;
+    WId handle;
+    INPUT ip;
 
     QTimer *timer;
 
